@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { IProduct } from 'src/app/interfaces/Product';
 
 @Component({
@@ -7,24 +7,25 @@ import { IProduct } from 'src/app/interfaces/Product';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent {
-  title = 'Quản lý sản phẩm';
-  status: boolean = false;
-  valueInput: string = "";
+  @Input() products: IProduct[] = [];
+  @Output() onRemove = new EventEmitter<number>();
+
+  // title = 'Quản lý sản phẩm';
+  // status: boolean = false;
+  // valueInput: string = "";
 
 
-  products: IProduct[] = [
-    { _id: 1, name: "Sản phẩm A", price: 1000, img: "https://picsum.photos/200/200" },
-    { _id: 2, name: "Sản phẩm B", price: 2000, img: "https://picsum.photos/200/200" },
-  ]
+  
 
   toggle() {
-    this.status = !this.status;
+    // this.status = !this.status;
   }
   setValue(e: any) {
-    this.valueInput = e.target.value;
+    // this.valueInput = e.target.value;
   }
 
   removeItem(id: any) {
-    this.products = this.products.filter((item) => item._id !== id);
+    this.onRemove.emit(id)
+    // this.products = this.products.filter((item) => item._id !== id);
   }
 }
