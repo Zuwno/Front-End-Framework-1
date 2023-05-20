@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +14,7 @@ import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { AdminProductComponent } from './pages/admin/admin-product/admin-product.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 // decorators typescript
 @NgModule({
   declarations: [
@@ -25,10 +28,13 @@ import { DashboardComponent } from './pages/admin/dashboard/dashboard.component'
     PageNotFoundComponent,
     AdminProductComponent,
     DashboardComponent,
+    ProductDetailComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

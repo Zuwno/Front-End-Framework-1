@@ -7,16 +7,19 @@ import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 
 const routes: Routes = [
   { path: "", component: BaseLayoutComponent, children: [
-    { path: "about", component: HomePageComponent }
+    { path: "about", component: HomePageComponent },
+    { path: "product/:id", component: ProductDetailComponent }
   ]},
 
   { path: "admin", component: AdminLayoutComponent, children: [
     { path: "", redirectTo: "dashboard", pathMatch: "full" },
     { path: "dashboard", component: DashboardComponent },
-    { path: "product", component: AdminLayoutComponent }
+    { path: "product", component: ProductListComponent }
+    
   ]  },
   { path: "**", component: PageNotFoundComponent }
 ];
