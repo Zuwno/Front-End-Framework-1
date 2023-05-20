@@ -15,6 +15,8 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { AdminProductComponent } from './pages/admin/admin-product/admin-product.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { ProductAddComponent } from './pages/product-add/product-add.component';
+import { ProductEditComponent } from './pages/product-edit/product-edit.component';
 // decorators typescript
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
     AdminProductComponent,
     DashboardComponent,
     ProductDetailComponent,
+    ProductAddComponent,
+    ProductEditComponent,
   ],
   imports: [
     BrowserModule,
